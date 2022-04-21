@@ -4,12 +4,13 @@
   "description": "this is based on tutorial from traversy media YT channel under course Learn the mern stack",
   "main": "server.js",
   "scripts": {
-    "server":" nodemon backend/server.js"
+    "server": " nodemon backend/server.js"
   },
   "author": "purushottam khedre",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.3.0"
