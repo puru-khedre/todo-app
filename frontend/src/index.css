@@ -8,6 +8,9 @@ body {
   width: 80vw;
   margin: auto;
 }
+input:-internal-autofill-selected {
+  border-radius: 7px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -43,4 +46,182 @@ code {
 
 .header ul > li {
   display: inline-block;
+}
+
+.heading p {
+  font-size: 22px;
+  color: slategrey;
+  font-weight: 500;
+  margin: 5px;
+  text-align: center;
+}
+
+.container div > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+  font-size: 16px;
+  min-width: 300px;
+  width: 100%;
+}
+
+.form span {
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.input-div {
+  border: 1px solid grey;
+  text-align: center;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  width: max-content;
+  position: relative;
+}
+.input-div:hover,
+.input-div:focus-within {
+  border-color: black;
+  box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.212);
+}
+.form-btn {
+  background-color: rgb(27, 27, 27) !important;
+  color: white;
+  border-radius: 7px;
+  width: 100% !important;
+  padding: 10px;
+  cursor: pointer;
+}
+.form-btn:hover,
+.form-btn:focus {
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.212);
+}
+
+.loadingSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.loadingSpinner {
+  background-image: url("../public/Spinning\ arrow.gif");
+  width: 50px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
+
+.logout-btn {
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(56, 56, 56);
+  border-radius: 7px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.212);
+}
+
+#goal-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  justify-content: stretch;
+  gap: 20px;
+}
+
+#goal-form .input-div {
+  margin-bottom: unset;
+  width: 100%;
+}
+
+#goal-form .input-div > input {
+  min-width: unset;
+}
+#goal-form > input {
+  width: unset !important;
+  min-width: unset;
+}
+
+.content,
+#goal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.goalItem {
+  border-radius: 7px;
+  border: 1px solid grey;
+
+  padding: 20px 15px;
+  position: relative;
+  text-align: center;
+}
+.goalItem:hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.274);
+  border-color: black;
+}
+.goalItem > .close-btn {
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 7px;
+  background: none;
+  cursor: pointer;
+}
+
+@media (max-width: 475px) {
+  .header ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .header ul a {
+    padding: 5px;
+  }
+  #goal-form {
+    flex-direction: column;
+    width: unset;
+    gap: 10px;
+  }
+  #goal-form > input {
+    width: 100% !important;
+  }
+  #goal-form .input-div {
+    width: 100%;
+  }
+  #goal-form .input-div > input {
+    width: unset;
+  }
+  .goalItem {
+    width: 100%;
+  }
+
+  .content,
+  #goal-container {
+    width: 80%;
+    margin: auto;
+  }
 }

@@ -4,7 +4,8 @@
   "description": "this is based on tutorial from traversy media YT channel under course Learn the mern stack",
   "main": "server.js",
   "scripts": {
-    "server": " nodemon backend/server.js"
+    "server": " nodemon backend/server.js",
+    "client":"npm start --prefix frontend"
   },
   "author": "purushottam khedre",
   "license": "ISC",

@@ -19,8 +19,6 @@ module.exports = {
       user: req.user._id,
     });
 
-    console.log(goal);
-
     res.json(goal);
   }),
 
@@ -70,6 +68,6 @@ module.exports = {
     }
 
     await goal.remove();
-    res.json({ message: `delete goal ${req.params.id}` });
+    res.json({ id: req.params.id });
   }),
 };
