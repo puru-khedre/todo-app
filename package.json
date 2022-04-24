@@ -4,6 +4,7 @@
   "description": "this is based on tutorial from traversy media YT channel under course Learn the mern stack",
   "main": "server.js",
   "scripts": {
+    "start": "node backend/server.js",
     "server": " nodemon backend/server.js",
     "client":"npm start --prefix frontend",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
