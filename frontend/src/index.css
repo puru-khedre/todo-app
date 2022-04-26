@@ -114,7 +114,6 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
 }
 .loadingSpinner {
   background-image: url("../public/Spinning\ arrow.gif");
@@ -161,35 +160,56 @@ code {
 
 .content,
 #goal-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  flex-wrap: wrap;
-  padding: 20px;
+  padding: 10px;
+  position: relative;
+}
+.goalItemHolder {
+  overflow-x: auto;
+  width: 100%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
 }
 .goalItem {
   border-radius: 7px;
   border: 1px solid grey;
-
-  padding: 20px 15px;
+  padding: 30px 15px 20px;
   position: relative;
   text-align: center;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
 }
+.goalItem h2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .goalItem:hover {
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.274);
   border-color: black;
 }
-.goalItem > .close-btn {
+
+.goalItem-btns > * {
   border: none;
-  border-radius: 3px;
+  padding: 5px;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.goalItem-btns > *:hover {
+  background-color: rgb(165, 165, 165);
+}
+.goalItem-btns {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 7px;
-  background: none;
-  cursor: pointer;
 }
 
 @media (max-width: 475px) {
@@ -223,5 +243,13 @@ code {
   #goal-container {
     width: 80%;
     margin: auto;
+    grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 475px) and (max-width: 700px) {
+  .content,
+  #goal-container {
+    grid-template-columns: 1fr 1fr;
+  }
+} ;
