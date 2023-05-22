@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaSignInAlt, FaEnvelope, FaKey } from "react-icons/fa";
+import { FaSignInAlt, FaEnvelope, FaKey, FaWpexplorer } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -88,6 +88,7 @@ function Login() {
             <label htmlFor="password">
               <span>
                 <FaKey />
+                <FaWpexplorer />
               </span>
             </label>
           </div>

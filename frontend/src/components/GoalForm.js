@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 import { FaTextHeight } from "react-icons/fa";
 import { createGoal } from "../features/goals/goalSlice";
+import { toast } from "react-toastify";
 
 function GoalForm() {
   const [goal, setGoal] = useState({ text: "" });
@@ -17,8 +18,11 @@ function GoalForm() {
 
   const submitGoal = (event) => {
     event.preventDefault();
-
-    dispatch(createGoal(goal));
+    if (/\S/.test(goal.text)) {
+      dispatch(createGoal(goal));
+    } else {
+      toast.error("Please enter valid text");
+    }
     setGoal({ text: "" });
   };
 

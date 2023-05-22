@@ -55,6 +55,9 @@ code {
   margin: 5px;
   text-align: center;
 }
+.container {
+  min-height: 100.072vh;
+}
 
 .container div > section {
   display: flex;
@@ -164,40 +167,45 @@ code {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
-  position: relative;
+  grid-template-rows: 105px;
+  align-items: flex-start;
 }
-.goalItemHolder {
-  overflow-x: auto;
-  width: 100%;
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-  border: 2px solid red;
-}
+
 .goalItem {
   border-radius: 7px;
   border: 1px solid grey;
   padding: 30px 15px 20px;
-  position: relative;
   text-align: center;
-  transition-property: all;
-  transition-timing-function: ease-in-out;
-  transition-duration: 1s;
+  position: relative;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  max-height: 110px;
+  transition: max-height 1s;
 }
+
 .goalItem h2 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  background-color: aqua;
 }
 
-.goalItem:hover {
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.274);
+.goalItem:hover,
+.goalItem:focus-within {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.315);
   border-color: black;
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+.goalItem > div:nth-child(1) {
+  margin-bottom: 7px;
 }
 
 .goalItem-btns > * {
   border: none;
-  padding: 5px;
+  padding: 7px;
   background: none;
   cursor: pointer;
   border-radius: 5px;
@@ -206,12 +214,41 @@ code {
 .goalItem-btns > *:hover {
   background-color: rgb(165, 165, 165);
 }
+.goalItem-close-btn > *:hover {
+  background-color: rgb(165, 165, 165);
+}
 .goalItem-btns {
   position: absolute;
   right: 0;
   top: 0;
 }
 
+.goalItem-close-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.goalItem-close-btn > * {
+  border: none;
+  padding: 7px;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.goal-updater input {
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 3px 5px;
+  width: 100%;
+  text-align: center;
+}
+.goal-updater input:focus {
+  border-color: black;
+}
 @media (max-width: 475px) {
   .header ul {
     display: flex;

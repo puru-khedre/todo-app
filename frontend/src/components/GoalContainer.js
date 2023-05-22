@@ -3,6 +3,7 @@ function GoalContainer(props) {
   const { goals } = props;
   return (
     <>
+      {" "}
       <section className="content" id="goal-container">
         {goals.length > 0 ? (
           <>
